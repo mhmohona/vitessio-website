@@ -6,7 +6,7 @@ aliases: ['/docs/reference/vreplication/v2/movetables/']
 ---
 
 {{< warning >}}
-These workflows can have a significant impact on the source tablets (which are often in production) — especially when a PRIMARY tablet is used as a source. You can limit the impact on the source tablets using the [`--vreplication_copy_phase_max_*` vttablet flags](../flags/#vreplication_copy_phase_max_innodb_history_list_length)
+These workflows can have a significant impact on the source tablets (which are often in production) — especially when a PRIMARY tablet is used as a source. You can limit the impact on the source tablets using the [`--vreplication_copy_phase_max_*` vttablet flags](../flags/#vreplication_copy_phase_max_innodb_history_list_length).
 {{< /warning >}}
 
 ## Description
@@ -36,15 +36,15 @@ Please see the [`MoveTables` command reference](../../programs/vtctldclient/vtct
 
 ### Adopting Vitess
 
-For those wanting to try out Vitess for the first time, `MoveTables` provides an easy way to route part of their workload to Vitess with the ability to migrate back at any time without any risk. You point a vttablet to your existing MySQL installation, spin up an unsharded Vitess cluster and use a `MoveTables` workflow to start serving some tables from Vitess. You can also go further and use a Reshard workflow to experiment with a sharded version of a part of your database.
+For those wanting to try out Vitess for the first time, `MoveTables` provides an easy way to route part of their workload to Vitess with the ability to migrate back at any time without any risk. You point a vttablet to your existing MySQL installation, spin up an unsharded Vitess cluster and use a `MoveTables` workflow to start serving some tables from Vitess. You can also go further and use a [Reshard workflow](reshard.md) to experiment with a sharded version of a part of your database.
 
-See this [user guide](../../../user-guides/configuration-advanced/unmanaged-tablet/#move-legacytable-to-the-commerce-keyspace) for detailed steps.
+See the [Unmanaged Tablet](../../../user-guides/configuration-advanced/unmanaged-tablet/#move-legacytable-to-the-commerce-keyspace) page for detailed steps.
 
 ### Vertical Sharding
 
 For existing Vitess users you can easily move one or more tables to another keyspace, either for balancing load or as preparation for sharding your tables.
 
-See this [user guide](../../../user-guides/migration/move-tables/) which describes how `MoveTables` works in the local example provided in the Vitess repo.
+See the [Move Tables](../../../user-guides/migration/move-tables/) page which describes how `MoveTables` works in the local example provided in the Vitess repo.
 
 ## Parameters
 
